@@ -20,6 +20,7 @@ _log = brlog.BrLog('tracker service')
 
 _log.info('Starting the BluRay tracker service') 
 
+
 class MyPlayer(xbmc.Player):
     def __init__(self):
         xbmc.Player.__init__(self)
@@ -37,7 +38,7 @@ class MyPlayer(xbmc.Player):
 myPlayer = MyPlayer()
 xbmc.sleep(4)
 if not makemkv.MakeMkvInteraction().makeMkvExists():
-    imagePath =  os.path.join(__addon__.getAddonInfo('path'),'resources','images', 'alerticon.png')
+    imagePath =  os.path.join(__addon__.getAddonInfo('path'), 'resources', 'images', 'alerticon.png')
     xbmc.executebuiltin('Notification("MakeMkv", "The MakeMKV bluray plugin cannot find MakeMkv. Please configure the plugin to point to it", "15000", "%s")' % (imagePath))
 
 while (not xbmc.abortRequested):

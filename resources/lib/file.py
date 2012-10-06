@@ -1,6 +1,6 @@
 class FakeFile:
-  def poll(self):
-    return False
+    def poll(self):
+        return False
  
-  def communicate(self):
-    return '', ''
+    def communicate(self):
+        return '', ''
