@@ -1,5 +1,9 @@
-import subprocess, settings, brlog, tempfile, os, threading, xbmcgui, urllib, re, xbmc, xbmcplugin
-from functools import partial
+import subprocess, settings, tempfile, os, urllib, re
+
+import xbmcgui, xbmc, xbmcplugin
+
+import brlog
+
 
 class MakeMkvInteraction:
     def __init__(self):
@@ -9,8 +13,13 @@ class MakeMkvInteraction:
     def discList(self):
         # First stop any old one
         self.killMkv()
-        tmpf = tempfile.NamedTemporaryFile(delete=True)
-        sp = os.system(r'%s -r --cache=1 --messages=%s info disc:10' %(self.settings.mkvLocation, tmpf.name))
+        tmpf = tempfile.NamedTemporaryFile(delete=False)
+        self.log.info('temporary file with disc info: %s' % tmpf.name)
+        sp = os.system(r'%s -r --cache=1 --messages=%s info disc:10' 
+                       % (self.settings.mkvLocation, tmpf.name))
+        self.log.info('Return code for disc info generation: %s' % str(sp))
+        if not os.path.isfile(tmpf.name):
+            self.log.error('Is no file: %s' % tmpf.name)
 
         tmpf = open(tmpf.name)
         content = tmpf.read()
