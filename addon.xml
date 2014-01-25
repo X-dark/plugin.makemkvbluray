@@ -2,10 +2,10 @@
 <addon 
     id="plugin.makemkvbluray" 
     name="BluRay Player with MakeMKV"
-	version="1.1.1" 
-	provider-name="desolat">
+	version="1.1.2" 
+	provider-name="X-dark">
 	<requires>
-		<import addon="xbmc.python" version="2.0" />
+		<import addon="xbmc.python" version="2.1.0" />
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="default.py">
 		<provides>video</provides>
