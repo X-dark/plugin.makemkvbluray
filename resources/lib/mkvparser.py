@@ -8,7 +8,7 @@ class BrowseHandler:
         self.lastKey = ''
         self.lastVal = ''
         self.titleMap = {}
-    
+
     def start(self, url, title = 'none'):
         # Initialize all locals
         self.catchCharData = False

@@ -10,23 +10,23 @@ class BrLog:
         if prefix <> '':
             prefix = '-' + prefix
         self.prefix = prefix
-    
+
     def setLevel(self, level):
         if level >= 0 and level <= 3:
             self.logLevel = level
-    
+
     def info(self, message):
         self.log(message, self.__INFO)
-    
+
     def debug(self, message):
         self.log(message, self.__DEBUG)
-    
+
     def error(self, message):
         self.log(message, self.__ERROR)
-        
+
     def warn(self, message):
         self.log(message, self.__WARN)
-    
+
     def log(self, message, level):
         if self.logLevel <= level:
             print '[BR%s %d] %s' %(self.prefix, level, message)

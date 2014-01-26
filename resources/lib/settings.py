@@ -10,7 +10,7 @@ class BluRaySettings:
     def __init__(self):
         addon = xbmcaddon.Addon(__scriptID__)
         self.log = brlog.BrLog('settings')
-        self.log.info('reading settings') 
+        self.log.info('reading settings')
 
         params = self.getParams()
         if len(sys.argv) >= 2:
@@ -21,16 +21,16 @@ class BluRaySettings:
         self.autoPlay = self.getBoolParam(params, "autoplay")
         self.disc = self.getParam(params, "disc")
         self.local = True
-        self.portNumber = addon.getSetting('port_number') 
+        self.portNumber = addon.getSetting('port_number')
         self.ipAddress = '127.0.0.1'
 
-        self.mkvLocation = addon.getSetting('mkvlocation') 
+        self.mkvLocation = addon.getSetting('mkvlocation')
         self.rootURL = 'http://%s:%s/' % (self.ipAddress, self.portNumber)
-        self.waitTimeOut = int(addon.getSetting('wait_timeout')) 
-        
+        self.waitTimeOut = int(addon.getSetting('wait_timeout'))
+
         # Sections:
-        self.enableDisc = addon.getSetting('support_disc') == "true" 
-        self.enableFile = addon.getSetting('support_fileselect') == "true" 
+        self.enableDisc = addon.getSetting('support_disc') == "true"
+        self.enableFile = addon.getSetting('support_fileselect') == "true"
 
     def getParam(self, params, name):
         try:
@@ -47,7 +47,7 @@ class BluRaySettings:
             return int(param)
         except:
             return None
-        
+
     def getBoolParam (self, params, name):
         try:
             param = self.getParam(params,name)
@@ -55,7 +55,7 @@ class BluRaySettings:
             return 'True' == param
         except:
             return None
-        
+
     def getParams(self):
         try:
             param=[]
@@ -78,4 +78,4 @@ class BluRaySettings:
             return []
 
     def showSettings(self):
-        xbmcaddon.Addon(__scriptID__).openSettings(sys.argv[ 0 ])    
+        xbmcaddon.Addon(__scriptID__).openSettings(sys.argv[ 0 ])

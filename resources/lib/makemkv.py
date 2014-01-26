@@ -9,13 +9,13 @@ class MakeMkvInteraction:
     def __init__(self):
         self.settings = settings.BluRaySettings()
         self.log = brlog.BrLog('makemkvinteraction')
-    
+
     def discList(self):
         # First stop any old one
         self.killMkv()
         tmpf = tempfile.NamedTemporaryFile(delete=False)
         self.log.info('temporary file with disc info: %s' % tmpf.name)
-        sp = os.system(r'%s -r --cache=1 --messages=%s info disc:10' 
+        sp = os.system(r'%s -r --cache=1 --messages=%s info disc:10'
                        % (self.settings.mkvLocation, tmpf.name))
         self.log.info('Return code for disc info generation: %s' % str(sp))
         if not os.path.isfile(tmpf.name):
@@ -50,15 +50,15 @@ class MakeMkvInteraction:
         else:
             # Treat as iso
             type = 'iso'
-        
+
         # Check if the file is reachable through the filesystem, to prevent errors with smb:// shares etc.
         if not os.path.exists(choice) :
             dialog = xbmcgui.Dialog() 
             dialog.ok("Info", _(50073))
             return False
-        
+
         return self.__runandregistershutdown('"%s" -r --cache=128 stream \'%s:%s\'' %(self.settings.mkvLocation, type, choice))
-        
+
 
     def __runandregistershutdown(self, mkvStart):
         result = self.__runmkvstream(mkvStart)
@@ -66,7 +66,7 @@ class MakeMkvInteraction:
             return True
         else:
             return False
-        
+
 
     def __runmkvstream(self, mkvStart):
         self.log.info('Starting %s' %(mkvStart))
@@ -75,7 +75,7 @@ class MakeMkvInteraction:
         timeSlept = 0
         proc = subprocess.Popen(mkvStart, shell=True)
         # Then wait for the stream to come up
-        while True:   
+        while True:
             try:
                 urllib.urlretrieve(self.settings.rootURL)
                 return proc.pid
@@ -89,25 +89,25 @@ class MakeMkvInteraction:
             timeSlept = timeSlept + 1
             if timeSlept > self.settings.waitTimeOut :
                 return -1
-        
+
 
     def killMkv(self):
         # Linux
         try :
-            self.log.info('attempting linux kill of makemkvcon') 
+            self.log.info('attempting linux kill of makemkvcon')
             subprocess.call('killall -9 makemkvcon', shell=True)
-            self.log.info('Linux call successful') 
+            self.log.info('Linux call successful')
         except:
             pass
 
         #Windows.
         try :
-            self.log.info('attempting windows kill of makemkvcon') 
+            self.log.info('attempting windows kill of makemkvcon')
             subprocess.call('taskkill /F /IM makemkvcon.exe', shell=True)
-            self.log.info('Windows call successful') 
+            self.log.info('Windows call successful')
         except:
             pass
-    
+
     def makeMkvExists(self):
         (fin, fout) = os.popen4('%s -r' %(self.settings.mkvLocation))
         result = fout.read()
@@ -116,7 +116,7 @@ class MakeMkvInteraction:
             self.log.info("MakeMkvCon found!")
             return True
         else:
-            self.log.info('MakeMkvcon seems not to be configured properly : %s' 
+            self.log.info('MakeMkvcon seems not to be configured properly : %s'
                           % (self.settings.mkvLocation))
             return False
 

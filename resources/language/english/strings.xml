@@ -15,24 +15,24 @@
     <string id="50005">duration</string>
     <string id="50006">chapters</string>
     <!-- Progress Dialog -->
-    <string id="50050">Starting BluRay script</string>
+    <string id="50050">Starting Blu-Ray script</string>
     <string id="50051">Initializing</string>
-    <string id="50052">Waiting for BluRay to be prepared</string>
+    <string id="50052">Waiting for Blu-Ray to be prepared</string>
     <string id="50053">Starting Disc</string>
     <string id="50054">Starting Image</string>
     <string id="50055">Starting Directory</string>
     <string id="50056">Waiting for stream</string>
-    
+
     <!-- Plugin strings -->
     <string id="50060">Settings</string>
-    
+
     <string id="50061">Play Disc %s: %s</string>
     <string id="50062">Browse Disc %s: %s</string>
     <string id="50063">Play Filelocation</string>
     <string id="50064">Browse Filelocation</string>
     <string id="50065">Play Remote location</string>
     <string id="50066">Browse Remote location</string>
-    
+
     <!-- Error messages -->
     <string id="50070">Running MakeMKV ended abnormally. Is it installed?</string>
     <string id="50071">unable to find autoplay stream</string>
