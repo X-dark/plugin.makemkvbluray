@@ -1,0 +1,155 @@
+# XBMC Media Center language file
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC-Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: 2014-01-28 16:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgctxt "#50001"
+msgid "MakeMKV location"
+msgstr ""
+
+msgctxt "#50002"
+msgid "Autoplay main feature"
+msgstr ""
+
+#empty strings from id 50003 to 50004
+
+msgctxt "#50005"
+msgid "duration"
+msgstr ""
+
+msgctxt "#50006"
+msgid "chapters"
+msgstr ""
+
+#Progress Dialog
+#empty strings from id 50007 to 50049
+
+msgctxt "#50050"
+msgid "Starting Blu-Ray script"
+msgstr ""
+
+msgctxt "#50051"
+msgid "Initializing"
+msgstr ""
+
+msgctxt "#50052"
+msgid "Waiting for Blu-Ray to be prepared"
+msgstr ""
+
+msgctxt "#50053"
+msgid "Starting Disc"
+msgstr ""
+
+msgctxt "#50054"
+msgid "Starting Image"
+msgstr ""
+
+msgctxt "#50055"
+msgid "Starting Directory"
+msgstr ""
+
+msgctxt "#50056"
+msgid "Waiting for stream"
+msgstr ""
+
+#Plugin strings
+#empty strings from id 50057 to 50059
+
+msgctxt "#50060"
+msgid "Settings"
+msgstr ""
+
+msgctxt "#50061"
+msgid "Play Disc %s: %s"
+msgstr ""
+
+msgctxt "#50062"
+msgid "Browse Disc %s: %s"
+msgstr ""
+
+msgctxt "#50063"
+msgid "Play Filelocation"
+msgstr ""
+
+msgctxt "#50064"
+msgid "Browse Filelocation"
+msgstr ""
+
+msgctxt "#50065"
+msgid "Play Remote location"
+msgstr ""
+
+msgctxt "#50066"
+msgid "Browse Remote location"
+msgstr ""
+
+#Error messages
+#empty strings from id 50067 to 50069
+
+msgctxt "#50070"
+msgid "Running MakeMKV ended abnormally. Is it installed?"
+msgstr ""
+
+msgctxt "#50071"
+msgid "unable to find autoplay stream"
+msgstr ""
+
+msgctxt "#50072"
+msgid "Error trying to open makemkv stream"
+msgstr ""
+
+msgctxt "#50073"
+msgid "The file you've selected cannot be accessed by the filesystem"
+msgstr ""
+
+#empty strings from id 50074 to 50999
+
+msgctxt "#51000"
+msgid "Remote Setup"
+msgstr ""
+
+msgctxt "#51001"
+msgid "Remote IP address"
+msgstr ""
+
+msgctxt "#51002"
+msgid "Local Port number"
+msgstr ""
+
+msgctxt "#51003"
+msgid "Seconds to wait for stream"
+msgstr ""
+
+msgctxt "#51004"
+msgid "General Settings"
+msgstr ""
+
+msgctxt "#51005"
+msgid "Browseable Options"
+msgstr ""
+
+msgctxt "#51006"
+msgid "Enable Disc support"
+msgstr ""
+
+msgctxt "#51007"
+msgid "Enable File location support"
+msgstr ""
+
+msgctxt "#51008"
+msgid "Enable Remote location support"
+msgstr ""
+
+msgctxt "#51009"
+msgid "Remote Port number"
+msgstr ""
