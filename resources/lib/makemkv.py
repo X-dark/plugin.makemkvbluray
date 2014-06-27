@@ -82,9 +82,9 @@ class MakeMkvInteraction:
             except IOError:
                 pass
             if proc.poll() :
-                if proc.proc != 0 :
-                    self.message(_(50070))
-                    return -1
+                if proc.returncode != 0 :
+                    self.log.error("makemkvcon error'd out! May require update. (Return Code: %s)" % proc.returncode)
+                return -1
             xbmc.sleep(1000)
             timeSlept = timeSlept + 1
             if timeSlept > self.settings.waitTimeOut :
@@ -93,20 +93,22 @@ class MakeMkvInteraction:
 
     def killMkv(self):
         # Linux
-        try :
-            self.log.info('attempting linux kill of makemkvcon')
-            subprocess.call('killall -9 makemkvcon', shell=True)
-            self.log.info('Linux call successful')
-        except:
-            pass
+        if os.name == 'posix':
+            try :
+                self.log.info('attempting linux kill of makemkvcon')
+                subprocess.call('killall -9 makemkvcon', shell=True)
+                self.log.info('Linux call successful')
+            except:
+                pass
 
         #Windows.
-        try :
-            self.log.info('attempting windows kill of makemkvcon')
-            subprocess.call('taskkill /F /IM makemkvcon.exe', shell=True)
-            self.log.info('Windows call successful')
-        except:
-            pass
+        if os.name == 'nt':
+            try :
+                self.log.info('attempting windows kill of makemkvcon')
+                subprocess.call('taskkill /F /IM makemkvcon.exe', shell=True)
+                self.log.info('Windows call successful')
+            except:
+                pass
 
     def makeMkvExists(self):
         (fin, fout) = os.popen4('%s -r' %(self.settings.mkvLocation))
